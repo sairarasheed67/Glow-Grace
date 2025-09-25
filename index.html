@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bs5 assignment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+
+
+
+    <style>
+        /* --- Brand Colors --- */
+        :root {
+            --primary-pink: #e91e63; /* Deep, vibrant pink */
+            --secondary-dark: #212529; /* Black/Dark Gray for text/nav */
+            --accent-light: #fff0f5; /* Very subtle light pink for accents */
+        }
+
+        /* --- Global Styles --- */
+        body {
+            background-color: #ffffff; /* Clean white background */
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+        }
+
+        
+        
+
+        /* --- Custom Pink Button Styles --- */
+        .btn-custom-pink {
+            background-color: var(--primary-pink) !important;
+            border-color: var(--primary-pink) !important;
+            color: white !important;
+            transition: background-color 0.3s;
+        }
+        .btn-custom-pink:hover {
+            background-color: #c2185b !important;
+            border-color: #c2185b !important;
+        }
+        
+        /* --- Search Bar Styling --- */
+        .search-form .form-control {
+            border-radius: 50px;
+            border: 1px solid var(--primary-pink);
+        }
+
+        /* --- Carousel Styles --- */
+        .carousel-item img {
+            height: 550px;
+            object-fit: cover;
+            filter: brightness(0.7); /* Slightly darker for better text readability */
+        }
+        .carousel-caption h5, .carousel-caption p {
+            font-weight: 600;
+        }
+
+        /* --- Section Styles --- */
+        .section-heading {
+            color: var(--secondary-dark);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Table Styling */
+        .table thead {
+            background-color: var(--primary-pink);
+            color: white;
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: var(--accent-light); /* Light pink accent on stripes */
+        }
+        
+        /* Form Styling */
+        #booking-form, #contact {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border: 1px solid #eee;
+        }
+    </style>
+
+<!--  
+.my-container {
+  height: 150px;  /* ya koi bhi height jo chahiye */
+  background-color: rgb(26, 24, 24);
+  background: url(https://images.stockcake.com/public/6/5/9/659a95b6-ec84-4a71-9bdd-d843824aafa7_large/notebook-and-pen-stockcake.jpg);
+   
+} -->
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(17, 15, 15);">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">💇‍♀️ Welcome to Glow & Grace</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#About">About</a></li>
+      </ul>
+    </div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger me-2" type="submit">Search</button>
+        <button class="btn btn-danger me-2" type="submit">Login</button>
+        <button class="btn btn-danger" type="submit">Signup</button>
+        
+
+
+
+      </form>
+  </div>
+</nav>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://img.pikbest.com/back_our/20210820/bg/146accd5f80d7.jpg!sw800" class="d-block w-100" style="height: 400px;" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Glow Up with Stunning Makeup</h5>
+        <p>Let us create a look that highlights your best features.</p>
+      </div>
+    </div>
+    <div class="carousel-item ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWzh8Of8Yx_xwnWdNMbJgUySKPvD9EC0X3A&s"style="height: 400px;" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Gorgeous Hair, Gorgeous You</h5>
+        <p>"Transform your look with vibrant colors and flawless styling."</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://img.freepik.com/free-photo/still-life-tools-nail-art_23-2150321259.jpg" style="height: 400px;" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Stunning Nails, Stunning Confidence</h5>
+        <p>From classic manicures to creative nail art — we do it all.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<main class="container my-5">
+  <div id="About" class="pt-5">
+   <h1 class="text-center">
+    💁‍♀️ Our Story: Glow & Grace
+  </h1>
+<div class="row">
+ <div class="col-8 "><p class="lead">
+      **Glow & Grace** is your premier destination for luxury beauty and wellness. We provide personalized service using the highest quality products.
+<p>Whether you're preparing for a wedding, a special event, or just need a routine refresh, our expert team ensures you leave feeling confident, beautiful, and utterly graceful.</p>
+
+    </p>
+       <a href="#booking-form" class="btn btn-danger btn-lg mt-3">Book Your Glow-Up Today!</a>
+</div>
+<div class="col-4">
+  <img src="https://img.freepik.com/premium-photo/woman-hairdresser-is-making-hairstyle-red-hair-girl-beauty-salon_141172-1836.jpg" style="max-height:250px; object-fit: cover;" alt="">
+</div>
+
+
+
+
+</div>
+
+
+ </div>
+</main>   
+<main class="container my-5">
+  
+<div class="container-fluid "  style="background-color: lightgray;" >
+  <section style="margin: 10px 10px 10px 10px;">
+  <figure class="text-center" style="color: red;">
+  <blockquote class="blockquote">
+<h1>✨Services For Every Occasion</h1>
+
+</figure>
+<p class="text-center">Unlock the essence of beauty with our comprehensive salon services, designed to pamper, rejuvenate, and transform.</p>
+
+
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Hair Treatments</h5>
+        <p class="card-text">Transform your looks into luxurious perfection with our expert hair treatment.​</p>
+        <a href="#" class="btn btn-danger">Style Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <a href=""></a>
+        <h5 class="card-title">Facial Treatments
+</h5>
+        <p class="card-text">Indulge in rejuvenating bliss and unveil your natural beauty with our facial treatments.​</p>
+        <a href="#" class="btn btn-danger">Try Facial</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <a href=""></a>
+        <h5 class="card-title">Body Treatments
+</h5>
+        <p class="card-text">Rejuvenate your body  with our body treatments.Pamper yourself with soothing massages  therapies​</p>
+        <a href="#" class="btn btn-danger">Book Treatment</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <a href=""></a>
+        <h5 class="card-title">Makeup Services
+</h5>
+        <p class="card-text">Elevate your look with our expert makeup services, tailored to enhance your beauty.​​</p>
+        <a href="#" class="btn btn-danger">Explore Looks</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+</div>
+</main>
+<section id="services" class="pt-5 p-4 ms-3">
+    <h2 class="text-center section-heading">📋 Full Service Menu & Pricing</h2>
+
+    <div id="bridal-menu" class="mb-5 menu-category">
+        <h3 class="text-center mb-4" style="color: var(--secondary-dark);">💍 Bridal & Formal Makeup</h3>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle shadow-sm">
+                <thead><tr><th>Service</th><th>Includes</th><th>Price</th></tr></thead>
+                <tbody class="service-table-body">
+                    <tr data-service="bridal makeup trial"><td>Bridal Trial Session</td><td>Consultation, full makeup application</td><td>$150</td></tr>
+                    <tr data-service="wedding day makeup lashes kit"><td>Wedding Day Makeup</td><td>Full application, lashes, touch-up kit</td><td>$350</td></tr>
+                    <tr data-service="bridal party member bridesmaids mothers"><td>Bridal Party Member</td><td>Full application for bridesmaids/mothers</td><td>$100</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="hair-menu" class="mb-5 menu-category">
+        <h3 class="text-center mb-4" style="color: var(--secondary-dark);">✂️ Hair Cuts & Styling</h3>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle shadow-sm">
+                <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
+                <tbody class="service-table-body">
+                    <tr data-service="womens haircut cut style"><td>Women's Haircut & Style</td><td>60 min</td><td>$75</td></tr>
+                    <tr data-service="full color hair color"><td>Full Color</td><td>120 min</td><td>$120+</td></tr>
+                    <tr data-service="balayage ombre hair highlights"><td>Balayage / Ombre</td><td>180+ min</td><td>$220+</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="nails-menu" class="mb-5 menu-category">
+        <h3 class="text-center mb-4" style="color: var(--secondary-dark);">💅 Manicures & Pedicures</h3>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle shadow-sm">
+                <thead><tr><th>Service</th><th>Duration</th><th>Price</th></tr></thead>
+                <tbody class="service-table-body">
+                    <tr data-service="classic manicure mani"><td>Classic Manicure</td><td>45 min</td><td>$35</td></tr>
+                    <tr data-service="gel full set nail set"><td>Gel Full Set</td><td>90 min</td><td>$60</td></tr>
+                    <tr data-service="luxury pedicure pedi"><td>Luxury Pedicure</td><td>60 min</td><td>$55</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</section>
+<section id="booking-form" class="pt-5">
+    <h2 class="text-center section-heading">🗓️ Request an Appointment</h2>
+    <form id="bookingForm" class="p-4 rounded">
+        <div class="row g-3">
+            <div class="col-md-6"><label for="name" class="form-label">Your Name</label><input type="text" id="name" name="name" class="form-control" required></div>
+            <div class="col-md-6"><label for="email" class="form-label">Email</label><input type="email" id="email" name="email" class="form-control" required></div>
+            <div class="col-12">
+                <label for="service" class="form-label">Select Service</label>
+                <select id="service" name="service" class="form-select" required>
+                    <option value="" disabled selected>-- Choose a service --</option>
+                    <optgroup label="Bridal"><option value="Wedding Day Makeup">Wedding Day Makeup</option><option value="Bridal Trial">Bridal Trial Session</option></optgroup>
+                    <optgroup label="Hair"><option value="Womens Haircut">Women's Haircut & Style</option><option value="Full Color">Full Color</option><option value="Balayage">Balayage / Ombre</option></optgroup>
+                    <optgroup label="Nails"><option value="Gel Full Set">Gel Full Set</option><option value="Luxury Pedicure">Luxury Pedicure</option></optgroup>
+                    <option value="Other">Other (Specify in notes)</option>
+                </select>
+            </div>
+            <div class="col-md-6"><label for="date" class="form-label">Preferred Date</label><input type="date" id="date" name="date" class="form-control" required></div>
+            <div class="col-md-6"><label for="time" class="form-label">Preferred Time</label><input type="time" id="time" name="time" class="form-control" required></div>
+            <div class="col-12"><label for="notes" class="form-label">Special Notes (Optional)</label><textarea id="notes" name="notes" class="form-control" rows="3"></textarea></div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-custom-pink btn-lg mt-3 w-75">Confirm Booking Request</button>
+            </div>
+        </div>
+        <div id="form-message" class="alert alert-success mt-4 d-none" role="alert">
+            **Success!** Your booking request has been submitted. We will contact you soon to confirm the details.
+        </div>
+    </form>
+</section>
+<section id="contact" class="pt-5">
+    <h2 class="text-center section-heading">📞 Contact & Location</h2>
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 rounded h-100 shadow-sm bg-white border border-primary-custom">
+                <h5 style="color: var(--primary-pink);"><i class="bi bi-geo-alt-fill"></i> Address</h5>
+                <p>123 Grace Street, Beauty District, Cityville</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded h-100 shadow-sm bg-white border border-primary-custom">
+                <h5 style="color: var(--primary-pink);"><i class="bi bi-clock-fill"></i> Hours</h5>
+                <p>Mon - Fri: 10:00 AM - 7:00 PM</p>
+                <p>Sat: 9:00 AM - 5:00 PM | Sun: Closed</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded h-100 shadow-sm bg-white border border-primary-custom">
+                <h5 style="color: var(--primary-pink);"><i class="bi bi-telephone-fill"></i> Get in Touch</h5>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: booking@glowandgrace.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class=" text-center" style="background-color: #212529 ; color: #fff0f5; height: 50px;">
+        <p class="mb-0"><small>&copy; 2025 Glow & Grace Salon. All Rights Reserved.</small></p>
+        
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
